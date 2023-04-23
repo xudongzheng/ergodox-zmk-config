@@ -1,8 +1,28 @@
-# If you have the standard ErgoDox Wireless setup with the latest Raytac "green"
-# dongle, you do not need to edit this file. If you are using a different dongle
-# or the older Raytac "blue" dongle, you will need to modify "board" below. If
-# you are not using a dongle, you will need to modify both "board" and "shield"
-# below. Please see "readme.md" in the parent directory for instructions.
+# TODO TODO TODO should test 1551usb3 ms88sfa once it's supported.
+
+# TODO TODO TODO add slicemk_ergodox_202109 and slicemk_ergodox_202212. see
+# trello card.
+
 include:
+
+# TODO TODO TODO test dongles.
+  - board: raytac_mdbt50q_rx
+    shield: slicemk_ergodox_dongle
   - board: raytac_mdbt50q_rx_green
     shield: slicemk_ergodox_dongle
+  - board: nordic_nrf52840_dongle_slicemk
+    shield: slicemk_ergodox_dongle
+  - board: slicemk_usbc_mdbt50q_blue
+    shield: slicemk_ergodox_dongle
+
+# TODO TODO TODO test dongleless
+  - board: slicemk_ergodox_202104
+    shield:  slicemk_ergodox_leftcentral
+  - board: slicemk_ergodox_202108_blue_left
+    shield: slicemk_ergodox_leftcentral
+  - board: slicemk_ergodox_202108_green_left
+    shield: slicemk_ergodox_leftcentral
+  - board: slicemk_ergodox_202205_green_left
+    shield: slicemk_ergodox_leftcentral
+  - board: slicemk_ergodox_202207_green_left
+    shield: slicemk_ergodox_leftcentral

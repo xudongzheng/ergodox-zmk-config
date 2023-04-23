@@ -1,11 +1,14 @@
+# TODO TODO TODO this "matrix" branch should go under slicemk user instead. will
+# move there once v20230905 is available from slicemk (also change remote below)
+
 manifest:
   remotes:
-    - name: slicemk
-      url-base: https://github.com/slicemk
+    - name: xudongzheng
+      url-base: https://github.com/xudongzheng
   projects:
     - name: zmk
-      remote: slicemk
-      revision: main
+      remote: xudongzheng
+      revision: v20230905
       import: app/west.yml
   self:
     path: config
