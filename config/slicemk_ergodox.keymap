@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define LAYER_MAIN 0
 #define LAYER_FN 1
@@ -21,11 +22,11 @@
 			display-name = "main";
 			bindings = <
 				&bootloader
-				&none            &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5     &kp PRINTSCREEN   &none           &kp NUMBER_6 &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9 &kp NUMBER_0  &kp K_APPLICATION
-				&kp TAB          &kp Q        &kp W        &kp F          &kp P          &kp G            &kp CAPSLOCK      &kp C_MUTE      &kp J        &kp L          &kp U           &kp Y        &kp SEMICOLON &kp BACKSLASH
-				&kp ESCAPE       &kp A        &kp R        &kp S          &kp T          &kp D                                              &kp H        &kp N          &kp E           &kp I        &kp O         &kp BACKSPACE
-				&mo LAYER_SYMBOL &kp Z        &kp X        &kp C          &kp V          &kp B            &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp K        &kp M          &kp COMMA       &kp PERIOD   &kp SLASH     &mo LAYER_SYMBOL
-				&none            &none        &sk LEFT_ALT &kp LEFT_ARROW &kp UP_ARROW                                                                   &kp DOWN_ARROW &kp RIGHT_ARROW &sk LEFT_ALT &none         &to LAYER_NMPAD
+				&none            &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5     &kp PRINTSCREEN   &none           &kp NUMBER_6 &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9 &kp NUMBER_0  &bootloader
+				&kp TAB          &kp Q        &kp W        &kp F          &kp P          &kp G            &kp CAPSLOCK      &kp C_MUTE      &kp J        &kp L          &kp U           &kp Y        &kp SEMICOLON &rgb_ug RGB_COLOR_HSB(0,100,0)
+				&kp ESCAPE       &kp A        &kp R        &kp S          &kp T          &kp D                                              &kp H        &kp N          &kp E           &kp I        &kp O         &rgb_ug RGB_COLOR_HSB(120,100,20)
+				&mo LAYER_SYMBOL &kp Z        &kp X        &kp C          &kp V          &kp B            &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp K        &kp M          &kp COMMA       &kp PERIOD   &kp SLASH     &rgb_ug RGB_COLOR_HSB(240,100,20)
+				&none            &none        &sk LEFT_ALT &kp LEFT_ARROW &kp UP_ARROW                                                                   &kp DOWN_ARROW &kp RIGHT_ARROW &sk LEFT_ALT &none         &rgb_ug RGB_COLOR_HSB(0,100,20)
 				                                                                         &none            &none             &none           &none
 				                                                          &sk LEFT_SHIFT &sk LEFT_CONTROL &none             &none           &kp SPACE    &sk LEFT_GUI
 				                                                                                          &kp RETURN        &mo LAYER_FN
