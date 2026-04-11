@@ -8,7 +8,10 @@
 #define LAYER_FN 1
 #define LAYER_SYMB 2
 #define LAYER_NMPAD 3
-#define LAYER_MOUSE 4
+
+&sk {
+	quick-release;
+};
 
 / {
 	keymap {
@@ -18,14 +21,14 @@
 			display-name = "main";
 			bindings = <
 				&bootloader
-				&kp GRAVE      &kp NUMBER_1    &kp NUMBER_2 &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5     &kp PRINTSCREEN   &none           &kp NUMBER_6 &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0    &kp K_APPLICATION
-				&kp TAB        &kp Q           &kp W        &kp E          &kp R          &kp T            &kp CAPSLOCK      &kp C_MUTE      &kp Y        &kp U          &kp I           &kp O         &kp P           &kp BACKSLASH
-				&kp ESCAPE     &kp A           &kp S        &kp D          &kp F          &kp G                                              &kp H        &kp J          &kp K           &kp L         &kp SEMICOLON   &kp BACKSPACE
-				&mo LAYER_SYMB &kp Z           &kp X        &kp C          &kp V          &kp B            &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp N        &kp M          &kp COMMA       &kp PERIOD    &kp SLASH       &mo LAYER_SYMB
-				&none          &mo LAYER_MOUSE &kp LEFT_ALT &kp LEFT_ARROW &kp UP_ARROW                                                                   &kp DOWN_ARROW &kp RIGHT_ARROW &kp RIGHT_ALT &mo LAYER_MOUSE &to LAYER_NMPAD
-				                                                                          &kp DELETE       &kp HOME          &kp END         &kp INSERT
-				                                                           &kp LEFT_SHIFT &kp LEFT_CONTROL &kp PAGE_UP       &kp PAGE_DOWN   &kp SPACE    &kp LEFT_GUI
-				                                                                                           &kp RETURN        &mo LAYER_FN
+				&none          &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5     &kp PRINTSCREEN   &none           &kp NUMBER_6 &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9 &kp NUMBER_0  &kp K_APPLICATION
+				&kp TAB        &kp Q        &kp W        &kp F          &kp P          &kp G            &kp CAPSLOCK      &kp C_MUTE      &kp J        &kp L          &kp U           &kp Y        &kp SEMICOLON &kp BACKSLASH
+				&kp ESCAPE     &kp A        &kp R        &kp S          &kp T          &kp D                                              &kp H        &kp N          &kp E           &kp I        &kp O         &kp BACKSPACE
+				&mo LAYER_SYMB &kp Z        &kp X        &kp C          &kp V          &kp B            &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp K        &kp M          &kp COMMA       &kp PERIOD   &kp SLASH     &mo LAYER_SYMB
+				&none          &mkp LCLK    &sk LEFT_ALT &kp LEFT_ARROW &kp UP_ARROW                                                                   &kp DOWN_ARROW &kp RIGHT_ARROW &sk LEFT_ALT &mkp RCLK     &to LAYER_NMPAD
+				                                                                       &none            &none             &none           &none
+				                                                        &sk LEFT_SHIFT &sk LEFT_CONTROL &none             &none           &kp SPACE    &sk LEFT_GUI
+				                                                                                        &kp RETURN        &mo LAYER_FN
 			>;
 		};
 
@@ -33,14 +36,14 @@
 			display-name = "fn";
 			bindings = <
 				&bootloader
-				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none   &none   &none   &none   &bootloader
-				&out OUT_USB &kp F1       &kp F2       &kp F3       &kp F4       &none &none &none &none &kp F13 &kp F14 &kp F15 &kp F16 &none
-				&out OUT_BLE &kp F5       &kp F6       &kp F7       &kp F8       &none             &none &kp F17 &kp F18 &kp F19 &kp F20 &none
-				&none        &kp F9       &kp F10      &kp F11      &kp F12      &none &none &none &none &kp F21 &kp F22 &kp F23 &kp F24 &bt BT_CLR
-				&none        &none        &none        &none        &none                                &none   &none   &none   &none   &none
-				                                                                 &none &none &none &none
-				                                                    &none        &none &none &none &none &none
-				                                                                       &none &none
+				&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none   &none   &none   &none   &bootloader
+				&out OUT_USB &kp F1       &kp F2       &kp F3       &kp F4       &kp DELETE   &none &none &none &kp F13 &kp F14 &kp F15 &kp F16 &none
+				&out OUT_BLE &kp F5       &kp F6       &kp F7       &kp F8       &kp INSERT               &none &kp F17 &kp F18 &kp F19 &kp F20 &none
+				&none        &kp F9       &kp F10      &kp F11      &kp F12      &none        &none &none &none &kp F21 &kp F22 &kp F23 &kp F24 &bt BT_CLR
+				&none        &none        &none        &none        &none                                       &none   &none   &none   &none   &none
+				                                                                 &none        &none &none &none
+				                                                    &none        &none        &none &none &none &none
+				                                                                              &none &none
 			>;
 		};
 
@@ -48,14 +51,14 @@
 			display-name = "symb";
 			bindings = <
 				&bootloader
-				&none &none &none &none            &none             &none             &none          &none            &none &none          &none           &none &none &none
-				&none &none &none &none            &none             &none             &kp C_POWER    &kp C_PLAY_PAUSE &none &none          &none           &none &none &none
-				&none &none &none &kp PLUS         &kp EQUAL         &none                                             &none &kp MINUS      &kp UNDERSCORE  &none &none &none
-				&none &none &none &kp LEFT_BRACKET &kp RIGHT_BRACKET &none             &kp C_PREVIOUS &kp C_NEXT       &none &kp LEFT_BRACE &kp RIGHT_BRACE &none &none &none
-				&none &none &none &none            &none                                                                     &none          &none           &none &none &none
-				                                                     &none             &none          &none            &none
-				                                   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES &none          &none            &none &none
-				                                                                       &none          &none
+				&none &m_3da27e0a   &none            &m_2f401e78      &none             &none       &none          &none            &m_e0ed0a03          &none                 &m_be4bd288    &m_b83cb04b    &m_90728f3f     &none
+				&none &kp RA(COMMA) &kp RA(NUMBER_1) &m_bb7135fc      &m_5f2de235       &kp HASH    &kp C_POWER    &kp C_PLAY_PAUSE &m_234856d7          &m_de00f18c           &m_c267259b    &none          &none           &m_806b0ade
+				&none &m_cc43ba55   &kp EXCLAMATION  &kp PLUS         &kp EQUAL         &kp DOLLAR                                  &kp AMPERSAND        &m_99b7dc15           &m_e8df40ce    &m_5e2a2cda    &m_7b2e1dad     &m_3f094a63
+				&none &kp RA(SLASH) &kp AT_SIGN      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PERCENT &kp C_PREVIOUS &kp C_NEXT       &kp ASTERISK         &kp MINUS             &kp UNDERSCORE &kp LEFT_BRACE &kp RIGHT_BRACE &none
+				&none &none         &none            &kp HOME         &kp PAGE_UP                                                                        &kp PAGE_DOWN         &kp END        &sk RIGHT_ALT  &none           &none
+				                                                                        &none       &none          &none            &none
+				                                                      &m_5d952ae8       &m_910902d7 &none          &none            &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS
+				                                                                                    &none          &none
 			>;
 		};
 
@@ -63,30 +66,36 @@
 			display-name = "nmpad";
 			bindings = <
 				&bootloader
-				&none   &none     &none        &none          &none        &none &none                &none                &none     &none          &none           &none        &none        &none
-				&kp TAB &none     &none        &none          &none        &none &none                &none                &none     &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9 &none        &none
-				&none   &kp SLASH &kp ASTERISK &kp MINUS      &kp PLUS     &none                                           &none     &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6 &kp NUMBER_0 &kp BACKSPACE
-				&none   &none     &none        &none          &kp PERIOD   &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none     &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3 &none        &none
-				&none   &none     &none        &kp LEFT_ARROW &kp UP_ARROW                                                           &kp DOWN_ARROW &kp RIGHT_ARROW &none        &none        &to LAYER_MAIN
-				                                                           &none &none                &none                &none
-				                                              &none        &none &none                &none                &kp SPACE &none
-				                                                                 &kp RETURN           &none
-			>;
-		};
-
-		layer_4 {
-			display-name = "mouse";
-			bindings = <
-				&bootloader
-				&none &none &none &none &none &none &none &none &none          &none           &none          &none           &none &none
-				&none &none &none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_RIGHT &mmv MOVE_UP   &none           &none &none
-				&none &none &none &none &none &none             &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none
-				&none &none &none &none &none &none &none &none &msc SCRL_DOWN &mkp LCLK       &mkp MCLK      &mkp RCLK       &none &none
-				&none &none &none &none &none                                  &none           &none          &none           &none &none
-				                              &none &none &none &none
-				                        &none &none &none &none &none          &none
-				                                    &none &none
+				&none   &none     &none        &none          &none          &none            &none                &none                &none     &none          &none           &none        &none        &none
+				&kp TAB &none     &none        &none          &none          &none            &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none     &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3 &none        &none
+				&none   &kp SLASH &kp ASTERISK &kp MINUS      &kp PLUS       &none                                                      &none     &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6 &kp NUMBER_0 &kp BACKSPACE
+				&none   &none     &none        &none          &kp PERIOD     &none            &none                &none                &none     &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9 &none        &none
+				&none   &none     &sk LEFT_ALT &kp LEFT_ARROW &kp UP_ARROW                                                                        &kp DOWN_ARROW &kp RIGHT_ARROW &sk LEFT_ALT &none        &to LAYER_MAIN
+				                                                             &none            &none                &none                &none
+				                                              &sk LEFT_SHIFT &sk LEFT_CONTROL &none                &none                &kp SPACE &sk LEFT_GUI
+				                                                                              &kp RETURN           &none
 			>;
 		};
 	};
+
+	ZMK_MACRO(m_806b0ade, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE &kp SPACE>;)
+	ZMK_MACRO(m_5e2a2cda, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp I>;)
+	ZMK_MACRO(m_99b7dc15, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp TILDE &kp N>;)
+	ZMK_MACRO(m_3da27e0a, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_6 &kp NUMBER_0 &kp NUMBER_6 &kp SPACE>;)
+	ZMK_MACRO(m_2f401e78, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_6 &kp NUMBER_0 &kp NUMBER_2 &kp SPACE>;)
+	ZMK_MACRO(m_be4bd288, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_9 &kp NUMBER_3 &kp NUMBER_7 &kp SPACE &kp RA(U) &kp NUMBER_2 &kp NUMBER_0 &kp NUMBER_0 &kp D &kp SPACE &kp RA(U) &kp NUMBER_2 &kp NUMBER_6 &kp NUMBER_4 &kp NUMBER_2 &kp SPACE &kp RA(U) &kp F &kp E &kp NUMBER_0 &kp F &kp SPACE>;)
+	ZMK_MACRO(m_b83cb04b, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_6 &kp NUMBER_2 &kp NUMBER_1 &kp SPACE>;)
+	ZMK_MACRO(m_90728f3f, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_9 &kp NUMBER_2 &kp NUMBER_6 &kp SPACE &kp RA(U) &kp NUMBER_2 &kp NUMBER_0 &kp NUMBER_0 &kp D &kp SPACE &kp RA(U) &kp NUMBER_2 &kp NUMBER_6 &kp NUMBER_4 &kp NUMBER_2 &kp SPACE &kp RA(U) &kp F &kp E &kp NUMBER_0 &kp F &kp SPACE>;)
+	ZMK_MACRO(m_7b2e1dad, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp O>;)
+	ZMK_MACRO(m_de00f18c, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp DOUBLE_QUOTES &kp U>;)
+	ZMK_MACRO(m_c267259b, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp U>;)
+	ZMK_MACRO(m_e8df40ce, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp E>;)
+	ZMK_MACRO(m_5d952ae8, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp SPACE>;)
+	ZMK_MACRO(m_910902d7, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp DOUBLE_QUOTES &kp SPACE>;)
+	ZMK_MACRO(m_e0ed0a03, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp RA(U) &kp NUMBER_1 &kp F &kp NUMBER_4 &kp NUMBER_4 &kp D &kp SPACE>;)
+	ZMK_MACRO(m_bb7135fc, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp TILDE &kp SPACE>;)
+	ZMK_MACRO(m_cc43ba55, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp SINGLE_QUOTE &kp A>;)
+	ZMK_MACRO(m_3f094a63, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp ASTERISK &kp ASTERISK>;)
+	ZMK_MACRO(m_5f2de235, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp GRAVE &kp SPACE>;)
+	ZMK_MACRO(m_234856d7, wait-ms = <10>; tap-ms = <10>; bindings = <&macro_tap &kp CARET &kp SPACE>;)
 };
