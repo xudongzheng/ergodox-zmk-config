@@ -9,25 +9,47 @@ include:
 # Build for all ErgoDox dongles.
   - board: nordic_nrf52840_dongle_slicemk
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: raytac_mdbt50q_cx_blue
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: raytac_mdbt50q_rx
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: raytac_mdbt50q_rx_green
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_1551usb3_ms88sfa_blue
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_usbc_mdbt50q_blue
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
 
 # Build all ErgoDox dongleless.
   - board: slicemk_ergodox_202104
     shield:  slicemk_ergodox_leftcentral
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_ergodox_202108_blue_left
     shield: slicemk_ergodox_leftcentral
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_ergodox_202108_green_left
     shield: slicemk_ergodox_leftcentral
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_ergodox_202205_green_left
     shield: slicemk_ergodox_leftcentral
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: slicemk_ergodox_202207_green_left
     shield: slicemk_ergodox_leftcentral
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
