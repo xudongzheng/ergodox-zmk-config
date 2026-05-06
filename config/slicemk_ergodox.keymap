@@ -88,5 +88,49 @@
 				                                    &none &none
 			>;
 		};
+
+		layer_5 {
+			status = "reserved";
+		};
+
+		layer_6 {
+			status = "reserved";
+		};
+
+		layer_7 {
+			status = "reserved";
+		};
+
+		layer_8 {
+			status = "reserved";
+		};
+
+		layer_9 {
+			status = "reserved";
+		};
+
+		layer_10 {
+			status = "reserved";
+		};
+
+		layer_11 {
+			status = "reserved";
+		};
+
+		layer_12 {
+			status = "reserved";
+		};
+
+		layer_13 {
+			status = "reserved";
+		};
+
+		layer_14 {
+			status = "reserved";
+		};
+
+		layer_15 {
+			status = "reserved";
+		};
 	};
 };
